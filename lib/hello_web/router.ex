@@ -21,13 +21,14 @@ defmodule HelloWeb.Router do
 
     get "/hello/:name", PageController, :hello
     resources "/items", ItemController
+    get "/items/toggle/:id", ItemController, :toggle
   end
 
   # Other scopes may use custom stacks.
   scope "/api", HelloWeb do
     pipe_through :api
 
-    resources "/users", UserController #, except: [:new, :edit]
+    resources "/users", UserController
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
