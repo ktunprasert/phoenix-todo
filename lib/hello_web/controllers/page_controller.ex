@@ -6,4 +6,9 @@ defmodule HelloWeb.PageController do
     # so skip the default app layout.
     render(conn, :home, layout: false)
   end
+
+  def hello(conn, %{"name" => name}) do
+    text(conn, "From name: #{name}")
+    # json(conn, %{message: "Hello #{name}"})
+  end
 end
