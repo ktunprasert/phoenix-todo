@@ -73,6 +73,7 @@ defmodule HelloWeb.ItemController do
     Todo.update_item(item, %{status: toggle_status(item)})
 
     conn
+    |> put_flash(:info, "Item toggled")
     |> redirect(to: ~p"/items")
   end
 end
