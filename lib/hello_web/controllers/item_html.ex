@@ -10,4 +10,11 @@ defmodule HelloWeb.ItemHTML do
   attr :action, :string, required: true
 
   def item_form(assigns)
+
+  def complete(%{:status => status}) do
+    case status do
+      1 -> "completed"
+      _ -> ""
+    end
+  end
 end
