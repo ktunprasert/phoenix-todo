@@ -17,4 +17,10 @@ defmodule HelloWeb.ItemHTML do
       _ -> ""
     end
   end
+
+  def remaining_items(items) do
+    items
+    |> Enum.filter(&(&1.status == 0))
+    |> length
+  end
 end
